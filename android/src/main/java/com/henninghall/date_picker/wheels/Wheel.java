@@ -94,7 +94,7 @@ public abstract class Wheel {
     private String[] getDisplayValues(ArrayList<String> values){
         ArrayList<String> displayValues = new ArrayList<>();
         for (String value: values) {
-            displayValues.add(this.toDisplayValue(value));
+            displayValues.add(" " + this.toDisplayValue(value) + " ");
         }
         return displayValues.toArray(new String[0]);
     }

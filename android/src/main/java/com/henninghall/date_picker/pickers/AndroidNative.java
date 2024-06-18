@@ -179,9 +179,7 @@ public class AndroidNative extends NumberPicker implements Picker {
                 // onValueChange is triggered also during scrolling. Since we don't want
                 // to send event during scrolling we make sure wheel is still. This particular
                 // case happens when wheel is tapped, not scrolled.
-                if(internalSpinState == SCROLL_STATE_IDLE) {
-                    sendEventIn500ms();
-                }
+                sendEventIn500ms();
             }
         });
 
@@ -214,7 +212,7 @@ public class AndroidNative extends NumberPicker implements Picker {
                 onValueChangedListener.onSpinnerStateChange();
             }
             // the delay make sure the wheel has stopped before sending the value change event
-        }, 500);
+        }, 100);
     }
 
     @Override
